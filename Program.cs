@@ -12,6 +12,7 @@ namespace EmployeeWage
             Console.WriteLine("Use Case #11: Employee Wage of Multiple Companies using API Approach");
             Console.WriteLine("Use Case #12: Saving Lists of Multiple Companies");
             Console.WriteLine("Use Case #13: Store Daily and Total Employee Wage");
+            Console.WriteLine("Use Case #14: Get Total Employee Wage when Queried by Company");
 
             Console.Write("Choose a use case number to run the program: ");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -52,6 +53,16 @@ namespace EmployeeWage
                     empWageBuilderUCThirteen.computeEmpWage();
                     empWageBuilderUCThirteen.addCompanyEmpWage("Amazon", 20, 15, 80);
                     empWageBuilderUCThirteen.computeEmpWage();
+                    break;
+                case 14:
+                    EmpWageBuilderUCFourteen empWageBuilderUCFourteen = new EmpWageBuilderUCFourteen();
+                    empWageBuilderUCFourteen.addCompanyEmpWage("Flipkart", 20, 10, 60);
+                    empWageBuilderUCFourteen.addCompanyEmpWage("Amazon", 20, 15, 80);
+                    empWageBuilderUCFourteen.computeEmpWage();
+                    int dmartTotalWage = empWageBuilderUCFourteen.getTotalWage("Flipkart");
+                    Console.WriteLine("Total wage for Flipkart: " + dmartTotalWage);
+                    int flipkartTotalWage = empWageBuilderUCFourteen.getTotalWage("Amazon");
+                    Console.WriteLine("Total wage for Amazon: " + flipkartTotalWage);
                     break;
                 default:
                     Console.WriteLine("Please enter a valid use case number!");
