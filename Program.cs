@@ -11,6 +11,7 @@ namespace EmployeeWage
             Console.WriteLine("Use Case #10: Employee Wage for Multiple Companies using Interface Approach");
             Console.WriteLine("Use Case #11: Employee Wage of Multiple Companies using API Approach");
             Console.WriteLine("Use Case #12: Saving Lists of Multiple Companies");
+            Console.WriteLine("Use Case #13: Store Daily and Total Employee Wage");
 
             Console.Write("Choose a use case number to run the program: ");
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -44,6 +45,13 @@ namespace EmployeeWage
                     empWageBuilderUCTwelve.computeEmpWage();
                     empWageBuilderUCTwelve.addCompanyEmpWage("Amazon", 20, 15, 80);
                     empWageBuilderUCTwelve.computeEmpWage();
+                    break;
+                case 13:
+                    EmpWageBuilderUCThirteen empWageBuilderUCThirteen = new EmpWageBuilderUCThirteen();
+                    empWageBuilderUCThirteen.addCompanyEmpWage("Flipkart", 20, 10, 60);
+                    empWageBuilderUCThirteen.computeEmpWage();
+                    empWageBuilderUCThirteen.addCompanyEmpWage("Amazon", 20, 15, 80);
+                    empWageBuilderUCThirteen.computeEmpWage();
                     break;
                 default:
                     Console.WriteLine("Please enter a valid use case number!");
